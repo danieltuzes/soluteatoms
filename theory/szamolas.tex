@@ -126,7 +126,7 @@ Elvégezve $\rho$-ra az egyes tagokon:
 \end{aligned} \]
 amelyből egyrészt
 \begin{equation} \label{eq:ps3_rho}
-\tcbhighmath[borderline={0.5pt}{0pt}{blue,dotted}]{\frac{{{P_{s,3}}\left[ \rho  \right]}}{{\delta \rho }} = G{b^2}A \cdot \ln \left( {\rho /{\rho _0}} \right) + G{b^2}A,}
+\tcbhighmath[borderline={0.5pt}{0pt}{blue,dotted}]{\frac{{{\delta P_{s,3}}\left[ \rho  \right]}}{{\delta \rho }} = G{b^2}A \cdot \ln \left( {\rho /{\rho _0}} \right) + G{b^2}A,}
 \end{equation}
 másrészt
 \[\begin{aligned}
@@ -135,11 +135,11 @@ másrészt
 \end{aligned} \]
 amelyből
 \begin{equation} \label{eq:ps4_rho}
-\tcbhighmath[borderline={0.5pt}{0pt}{blue,dotted}]{\frac{{{P_{s,4}}\left[ \rho  \right]}}{{\delta \rho }} =  0,}
+\tcbhighmath[borderline={0.5pt}{0pt}{blue,dotted}]{\frac{{{\delta P_{s,4}}\left[ \rho  \right]}}{{\delta \rho }} =  0,}
 \end{equation}
 így \cref{eq:ps3_rho,eq:ps4_rho} egyenleteket felhasználva kapjuk:
 \begin{equation} \label{eq:ps_rho}
-\tcbhighmath[borderline={1pt}{0pt}{blue,dashed}]{\frac{{{P_s}\left[ \rho  \right]}}{{\delta \rho }} = G{b^2}A \cdot \ln \left( {\rho /{\rho _0}} \right) + G{b^2}A .}
+\tcbhighmath[borderline={1pt}{0pt}{blue,dashed}]{\frac{{{\delta P_s}\left[ \rho  \right]}}{{\delta \rho }} = G{b^2}A \cdot \ln \left( {\rho /{\rho _0}} \right) + G{b^2}A .}
 \end{equation}
 Be kell helyettesíteni \cref{eq:rho_kappa_conti}-ba \cref{eq:ps_kappa,eq:ps_rho}-vel. Ha ${{\partial _x}\frac{{\delta P}}{{\delta \kappa }}} > 0$, akkor:
 \[\begin{aligned}
@@ -167,12 +167,12 @@ vagyis összesen:
 \begin{equation}
 \tcbhighmath[borderline={1pt}{0pt}{blue,dashed}]{\frac{{\delta {P_s}\left[ c \right]}}{{\delta c}} = \alpha_c  \cdot \left( {c - {c_\infty }} \right) - \beta  \cdot \Delta \chi }
 \end{equation}
-A koncentráció kontinuitási egyenletéből megkapjuk az időfejődést:
+A koncentráció \told\ref{eq:c_conti}+as{} kontinuitási egyenletéből megkapjuk az időfejődést:
 \[\partial_t c =  - \nabla \left( {{M_c} \cdot \nabla \left( {{\alpha _c} \cdot \left( {c - {c_\infty }} \right) - \beta  \cdot \Delta \chi } \right)} \right),\]
 amelyben $M_c$ és $c_{\infty}$ állandó térben, így
 \begin{equation} \label{eq:c}
 \tcbhighmath[borderline={1pt}{0pt}{blue,solid}]{
-\partial_t c =  - {M_c}{\alpha _c}\Delta c + \beta {M_c}\Delta^2 \chi}.
+\partial_t c =  {M_c}{\alpha _c}\Delta c - \beta {M_c}\Delta^2 \chi}.
 \end{equation}
 
 \subsection{Mozgáegyenletek megoldása lineáris stabilitáselemzéssel}
@@ -183,7 +183,7 @@ amelyben $M_c$ és $c_{\infty}$ állandó térben, így
 0 & = - \frac{{1 - \nu }}{{2\mu }}{\Delta ^2}\chi  + b\cdot\partial_y\kappa - \beta  \cdot \Delta c \\ 
     {\partial _t}\rho  &  =  - {M_0}b{\partial _x}\left\{ {\kappa {\tau _{{\text{mf}}}} - \frac{\kappa }{\rho }GbD{\partial _x}\kappa  - GbA{\partial _x}\rho } \right\} \\ 
   {\partial _t}\kappa  &  =  - {M_0}b{\partial _x}\left\{ {\rho {\tau _{{\text{mf}}}} - \rho \alpha \mu b\sqrt \rho - GbD{\partial _x}\kappa  - \frac{\kappa }{\rho } GbA{\partial _x}\rho } \right\} \\
-  \partial_t c & =  - {M_c}{\alpha _c}\Delta c + \beta {M_c}\Delta^2 \chi
+  \partial_t c & =  {M_c}{\alpha _c}\Delta c - \beta {M_c}\Delta^2 \chi
 \end{aligned}  }
 \end{gather}
 Ezek megoldását keressük egy egyensúlyi állapot körül,
@@ -270,22 +270,22 @@ Ebből
 
 \subsubsection{Oldott atom koncentráció}
 \[\begin{aligned}
-  \frac{\lambda }{{{t_0}}}\delta c &  =  - {M_c}{\alpha _c}\Delta \left( {\delta c} \right) + \beta {M_c}{\Delta ^2}\left( {xy \cdot {\tau _0} + \delta \chi } \right) \\ 
-   &  =  - {M_c}{\alpha _c}\left( { - {\rho _0} \cdot {k^2}} \right)\delta c + \beta {M_c}\left( {\rho _0^2 \cdot {k^4}} \right) \cdot \delta \chi  \\ 
-   &  = {M_c}{\alpha _c}{\rho _0}{k^2} \cdot \delta c + \beta {M_c}\rho _0^2{k^4} \cdot \delta \chi  \\ 
+  \frac{\lambda }{{{t_0}}}\delta c &  =  {M_c}{\alpha _c}\Delta \left( {\delta c} \right) - \beta {M_c}{\Delta ^2}\left( {xy \cdot {\tau _0} + \delta \chi } \right) \\ 
+   &  =  {M_c}{\alpha _c}\left( { - {\rho _0} \cdot {k^2}} \right)\delta c - \beta {M_c}\left( {\rho _0^2 \cdot {k^4}} \right) \cdot \delta \chi  \\ 
+   &  = - {M_c}{\alpha _c}{\rho _0}{k^2} \cdot \delta c - \beta {M_c}\rho _0^2{k^4} \cdot \delta \chi  \\ 
 \end{aligned} \]
 Ebből, új jelöléseket bevezetve:
 \begin{equation} \label{eq:lin_ed_c}
 \tcbhighmath[borderline={1pt}{0pt}{blue,solid}]{
-0 = \left( {\lambda  - \frac{{{M_r}{\alpha _r}{k^2}}}{{{b^2}}}} \right) \cdot \delta c - \frac{{\beta {M_r}{\rho _0}}}{{{b^2}G}}{k^4} \cdot \delta \chi \qquad \frac{{{M_c}}}{{{M_0}}}: = {M_r}\quad \frac{{{\alpha _c}}}{G}: = {\alpha _r}.}
+0 = \left( {\lambda + \frac{{{M_r}{\alpha _r}{k^2}}}{{{b^2}}}} \right) \cdot \delta c + \frac{{\beta {M_r}{\rho _0}}}{{{b^2}G}}{k^4} \cdot \delta \chi \qquad \frac{{{M_c}}}{{{M_0}}}: = {M_r}\quad \frac{{{\alpha _c}}}{G}: = {\alpha _r}.}
 \end{equation}
 
 \subsubsection{Másodrendű feszültségtenzor eliminálása}
-\Cref{eq:lin_ed_kappa,eq:lin_ed_c} tartalmaznak $\delta\chi$ függést, amit \cref{eq:lin_ed_chi} segítségével eliminálhatunk. A kapott egyenletek a ${\tau _r} = {\tau _0} - {\tau _f}$ jelöléssel, \cref{eq:lin_ed_rho}-vel együtt:
+\Cref{eq:lin_ed_kappa,eq:lin_ed_c} tartalmaznak $\delta\chi$ függést, amit \cref{eq:lin_ed_chi} segítségével eliminálhatunk. A kapott egyenletek a ${\tau _f} = \alpha \mu b\sqrt {{\rho _0}} $ és ${\tau _r} = {\tau _0} - {\tau _f}$ jelöléssel, \cref{eq:lin_ed_rho}-vel együtt:
 \begin{gather}\begin{aligned}
   0 &  = \left( {\lambda  + Ak_x^2} \right) \cdot \delta \rho  + i\frac{{{\tau _0}}}{{bG\sqrt {{\rho _0}} }}{k_x} \cdot \delta \kappa  \\ 
   0 &  = i\left( {{\tau _r} - \frac{{{\tau _f}}}{2}} \right)\frac{1}{{bG\sqrt {{\rho _0}} }}{k_x} \cdot \delta \rho  + \left( {\lambda  + Dk_x^2 + 4\pi \frac{{k_x^2 k_y^2}}{{{k^4}}}} \right)\delta \kappa  - i4\pi \beta \frac{{\sqrt {{\rho _0}} }}{b}\frac{{k_x^2{k_y}}}{{{k^2}}} \cdot \delta c \\ 
-  0 &  =  - i4\pi \frac{{\beta {M_r}}}{{b\sqrt {{\rho _0}} }}{k_y} \cdot \delta \kappa  + \left[ {\lambda  - \left( {{\alpha _r} + 4\pi {\beta ^2}} \right)\frac{{{M_r}{k^2}}}{{{b^2}}}} \right] \cdot \delta c. \\ 
+  0 &  =  i4\pi \frac{{\beta {M_r}}}{{b\sqrt {{\rho _0}} }}{k_y} \cdot \delta \kappa  + \left[ {\lambda  + \left( {{\alpha _r} + 4\pi {\beta ^2}} \right)\frac{{{M_r}{k^2}}}{{{b^2}}}} \right] \cdot \delta c. \\ 
 \end{aligned}
 \end{gather}
 Mátrixos írásmódban kapjuk, hogy 
@@ -294,7 +294,7 @@ Mátrixos írásmódban kapjuk, hogy
 \left({\begin{array}{*{20}{c}}
   {\lambda  + Ak_x^2}&{i\frac{{{\tau _0}}}{{bG\sqrt {{\rho _0}} }}{k_x}}&0 \\ 
   {i\left( {{\tau _r} - \frac{{{\tau _f}}}{2}} \right)\frac{1}{{bG\sqrt {{\rho _0}} }}{k_x}}&{\lambda  + Dk_x^2 + 4\pi \frac{{k_x^2 k_y^2}}{{{k^4}}}}&{ - i4\pi \beta \frac{{\sqrt {{\rho _0}} }}{b}\frac{{k_x^2{k_y}}}{{{k^2}}}} \\ 
-  0&{ - i4\pi \frac{{\beta {M_r}}}{{b\sqrt {{\rho _0}} }}{k_y} }&{\lambda  - \left( {{\alpha _r} + 4\pi {\beta ^2}} \right)\frac{{{M_r}{k^2}}}{{{b^2}}}} 
+  0&{ i4\pi \frac{{\beta {M_r}}}{{b\sqrt {{\rho _0}} }}{k_y} }&{\lambda  + \left( {{\alpha _r} + 4\pi {\beta ^2}} \right)\frac{{{M_r}{k^2}}}{{{b^2}}}} 
 \end{array}} \right)\left( {\begin{array}{*{20}{c}}
   {\delta \rho } \\ 
   {\delta \kappa } \\ 
