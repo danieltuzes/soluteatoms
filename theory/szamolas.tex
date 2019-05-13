@@ -164,7 +164,7 @@ vagyis összesen:
 \begin{equation}
 {P_{s,6}}\left[ {c + \delta c} \right] = \int_{{L^2}} {\beta \left( {c + \delta c} \right)\left( { - \Delta \chi } \right)} dA \Rightarrow \tcbhighmath[borderline={0.5pt}{0pt}{blue,dotted}]{\frac{{\delta {P_{s,6}}\left[ c \right]}}{{\delta c}} =  - \beta  \cdot \Delta \chi}
 \end{equation}
-\begin{equation}
+\begin{equation} \label{eq:c_pot}
 \tcbhighmath[borderline={1pt}{0pt}{blue,dashed}]{\frac{{\delta {P_s}\left[ c \right]}}{{\delta c}} = \alpha_c  \cdot \left( {c - {c_\infty }} \right) - \beta  \cdot \Delta \chi }
 \end{equation}
 A koncentráció \told\ref{eq:c_conti}+as{} kontinuitási egyenletéből megkapjuk az időfejődést:
@@ -172,12 +172,12 @@ A koncentráció \told\ref{eq:c_conti}+as{} kontinuitási egyenletéből megkapj
 amelyben $M_c$ és $c_{\infty}$ állandó térben, így
 \begin{equation} \label{eq:c}
 \tcbhighmath[borderline={1pt}{0pt}{blue,solid}]{
-\partial_t c =  {M_c}{\alpha _c}\Delta c - \beta {M_c}\Delta^2 \chi}.
+\partial_t c =  {M_c}{\alpha _c}\Delta c - \beta {M_c}\Delta^2 \chi.}
 \end{equation}
 
-\subsection{Mozgáegyenletek megoldása lineáris stabilitáselemzéssel}
-\Cref{eq:chi,eq:rho_kappa,eq:c} egyenletek együtt, $\partial_x \partial_y \chi = {\tau _{mf}}$ jelöléssel, $\kappa^2/\rho^2$-es tag elhanyagolásával:
-\begin{gather}
+\subsection{Mozgásegyenletek megoldása lineáris stabilitáselemzéssel}
+\Cref{eq:chi,eq:rho_kappa,eq:c} egyenletek együtt, $\partial_x \partial_y \chi = {\tau _{{\text{mf}}}}$ jelöléssel, $\kappa^2/\rho^2$-es tag elhanyagolásával:
+\begin{gather} \label{eq:eom}
 \tcbhighmath[borderline={1pt}{0pt}{black,solid}]{
 \begin{aligned}
 0 & = - \frac{{1 - \nu }}{{2\mu }}{\Delta ^2}\chi  + b\cdot\partial_y\kappa - \beta  \cdot \Delta c \\ 
@@ -201,7 +201,7 @@ Ha konstansok volnának, azok kielégítenék az egyenelteket, és a korábbi je
   \left\langle c \right\rangle  = {c_\infty } \Rightarrow {c_0} &  = {c_\infty }. \\ 
 \end{aligned} \]
 Az egyes variációk idő és térfüggését $\exp \left( {\frac{\lambda }{{{t_0}}} \cdot t + i\sqrt {{\rho _0}}  \cdot {\mathbf{kr}}} \right)$ alakban keresve a vizsgált alakok:
-\begin{gather}
+\begin{gather} \label{eq:perturbative_solution}
 \tcbhighmath[borderline={1pt}{0pt}{black,solid}]{
 \left( {\begin{array}{*{20}{c}}
   \chi  \\ 
@@ -220,8 +220,10 @@ Az egyes variációk idő és térfüggését $\exp \left( {\frac{\lambda }{{{t_
   {\delta {c_0}} 
 \end{array}} \right) \cdot \exp \left( {\frac{\lambda }{{{t_0}}} \cdot t + i\sqrt {{\rho _0}}  \cdot {\mathbf{kr}}} \right),}
 \end{gather}
-amelyben $1/{t_0} = {b^2}G{\rho _0}{M_0}$.
-
+amelyben
+\begin{equation} \label{eq:t_0_def}
+1/{t_0} = {b^2}G{\rho _0}{M_0}.
+\end{equation}
 A behelyettesítés után a deriváló operátorok az alábbi sajátértéket veszik fel:
 \[\begin{aligned}
   {\partial _t} &  \to \lambda /t_0 \\ 
@@ -245,10 +247,10 @@ Ebből
 \subsubsection{Diszlokációsűrűségek}
 A teljes diszlokációsűrűség fejlődésére:
 \[\begin{aligned}
-  \frac{\lambda }{{{t_0}}}\delta \rho  &  =  - {M_0}b{\partial _x}\left\{ {\underbrace {\delta \kappa  \cdot {\partial _y}{\partial _y}\left( {xy \cdot {\tau _0} + \delta \chi } \right)}_{\delta \kappa  \cdot {\tau _0} + \delta \kappa  \cdot \delta \chi  \cdot  \ldots } - \underbrace {\frac{{\delta \kappa }}{\rho }GbD{\partial _x}\delta \kappa }_{ \propto \delta {\kappa ^2}} - GbA{\partial _x}\delta \rho } \right\} \\ 
+  \frac{\lambda }{{{t_0}}}\delta \rho  &  =  - {M_0}b{\partial _x}\left\{ {\underbrace {\delta \kappa  \cdot {\partial _x}{\partial _y}\left( {xy \cdot {\tau _0} + \delta \chi } \right)}_{\delta \kappa  \cdot {\tau _0} + \delta \kappa  \cdot \delta \chi  \cdot  \ldots } - \underbrace {\frac{{\delta \kappa }}{\rho }GbD{\partial _x}\delta \kappa }_{ \propto \delta {\kappa ^2}} - GbA{\partial _x}\delta \rho } \right\} \\ 
    &  =  - {M_0}bi\sqrt {{\rho _0}}  \cdot {k_x}\left\{ {\delta \kappa  \cdot {\tau _0} - GbAi\sqrt {{\rho _0}}  \cdot {k_x}\delta \rho } \right\} \\ 
 \end{aligned} \]
-Ebből 
+Ebből \aref{eq:t_0_def}.\ egyenlet szerint az idővel visszahelyettesítve:
 \begin{equation} \label{eq:lin_ed_rho}
 \tcbhighmath[borderline={1pt}{0pt}{blue,solid}]{
 0 = \left( {\lambda  + Ak_x^2} \right) \cdot \delta \rho  + i\frac{{{\tau _0}}}{{bG\sqrt {{\rho _0}} }}{k_x} \cdot \delta \kappa }
@@ -274,31 +276,162 @@ Ebből
    &  =  {M_c}{\alpha _c}\left( { - {\rho _0} \cdot {k^2}} \right)\delta c - \beta {M_c}\left( {\rho _0^2 \cdot {k^4}} \right) \cdot \delta \chi  \\ 
    &  = - {M_c}{\alpha _c}{\rho _0}{k^2} \cdot \delta c - \beta {M_c}\rho _0^2{k^4} \cdot \delta \chi  \\ 
 \end{aligned} \]
-Ebből, új jelöléseket bevezetve:
+Ebből
 \begin{equation} \label{eq:lin_ed_c}
 \tcbhighmath[borderline={1pt}{0pt}{blue,solid}]{
-0 = \left( {\lambda + \frac{{{M_r}{\alpha _r}{k^2}}}{{{b^2}}}} \right) \cdot \delta c + \frac{{\beta {M_r}{\rho _0}}}{{{b^2}G}}{k^4} \cdot \delta \chi \qquad \frac{{{M_c}}}{{{M_0}}}: = {M_r}\quad \frac{{{\alpha _c}}}{G}: = {\alpha _r}.}
+0 = \left( {\lambda  + \frac{{{M_c}{\alpha _c}{k^2}}}{{{M_0}{b^2}G}}} \right) \cdot \delta c + \frac{{\beta {M_c}{\rho _0}}}{{M_0 {b^2}G}}{k^4} \cdot \delta \chi.}
 \end{equation}
 
-\subsubsection{Másodrendű feszültségtenzor eliminálása}
+\subsubsection{Másodrendű feszültségtenzor eliminálása, megoldás mátrixos alakban}
 \Cref{eq:lin_ed_kappa,eq:lin_ed_c} tartalmaznak $\delta\chi$ függést, amit \cref{eq:lin_ed_chi} segítségével eliminálhatunk. A kapott egyenletek a ${\tau _f} = \alpha \mu b\sqrt {{\rho _0}} $ és ${\tau _r} = {\tau _0} - {\tau _f}$ jelöléssel, \cref{eq:lin_ed_rho}-vel együtt:
 \begin{gather}\begin{aligned}
   0 &  = \left( {\lambda  + Ak_x^2} \right) \cdot \delta \rho  + i\frac{{{\tau _0}}}{{bG\sqrt {{\rho _0}} }}{k_x} \cdot \delta \kappa  \\ 
   0 &  = i\left( {{\tau _r} - \frac{{{\tau _f}}}{2}} \right)\frac{1}{{bG\sqrt {{\rho _0}} }}{k_x} \cdot \delta \rho  + \left( {\lambda  + Dk_x^2 + 4\pi \frac{{k_x^2 k_y^2}}{{{k^4}}}} \right)\delta \kappa  - i4\pi \beta \frac{{\sqrt {{\rho _0}} }}{b}\frac{{k_x^2{k_y}}}{{{k^2}}} \cdot \delta c \\ 
-  0 &  =  i4\pi \frac{{\beta {M_r}}}{{b\sqrt {{\rho _0}} }}{k_y} \cdot \delta \kappa  + \left[ {\lambda  + \left( {{\alpha _r} + 4\pi {\beta ^2}} \right)\frac{{{M_r}{k^2}}}{{{b^2}}}} \right] \cdot \delta c. \\ 
+  0 &  =  i4\pi \frac{{\beta {M_c}}}{{M_0 b\sqrt {{\rho _0}} }}{k_y} \cdot \delta \kappa  + \left[ {\lambda  + \left( {\frac{\alpha _c}{G} + 4\pi {\beta ^2}} \right)\frac{{{M_c}{k^2}}}{{{M_0 b^2}}}} \right] \cdot \delta c, \\ 
 \end{aligned}
 \end{gather}
-Mátrixos írásmódban kapjuk, hogy 
-\begin{equation}
-\tcbhighmath[borderline={1pt}{0pt}{black,solid}]{
+illetve mátrixos írásmódban kapjuk, hogy 
+\begin{equation*}
 \left({\begin{array}{*{20}{c}}
   {\lambda  + Ak_x^2}&{i\frac{{{\tau _0}}}{{bG\sqrt {{\rho _0}} }}{k_x}}&0 \\ 
   {i\left( {{\tau _r} - \frac{{{\tau _f}}}{2}} \right)\frac{1}{{bG\sqrt {{\rho _0}} }}{k_x}}&{\lambda  + Dk_x^2 + 4\pi \frac{{k_x^2 k_y^2}}{{{k^4}}}}&{ - i4\pi \beta \frac{{\sqrt {{\rho _0}} }}{b}\frac{{k_x^2{k_y}}}{{{k^2}}}} \\ 
-  0&{ i4\pi \frac{{\beta {M_r}}}{{b\sqrt {{\rho _0}} }}{k_y} }&{\lambda  + \left( {{\alpha _r} + 4\pi {\beta ^2}} \right)\frac{{{M_r}{k^2}}}{{{b^2}}}} 
+  0&{ i4\pi \frac{{\beta {M_c}}}{{M_0 b\sqrt {{\rho _0}} }}{k_y} }&{\lambda  + \left( {\frac{\alpha _c}{G} + 4\pi {\beta ^2}} \right)\frac{{M_c}{k^2}}{M_0 b^2}} 
+\end{array}} \right)\left( {\begin{array}{*{20}{c}}
+  {\delta \rho } \\ 
+  {\delta \kappa } \\ 
+  {{\delta _c}} 
+\end{array}} \right) = 0.
+\end{equation*}
+Vezessük be az alábbi új jelöléseket a kevesebb paraméterhez!
+\[\begin{gathered}
+  \begin{array}{*{20}{c}}
+  {\frac{{{\tau _f}}}{{bG\sqrt {{\rho _0}} }} = {{\tilde \tau }_f}}&{\frac{{{\tau _r}}}{{bG\sqrt {{\rho _0}} }} = {{\tilde \tau }_r}} 
+\end{array} \hfill \\
+  \begin{array}{*{20}{c}}
+  {\beta \frac{{\sqrt {{\rho _0}} }}{b} = {\beta ^*}}&{\frac{{{M_c}}}{{{\rho _0}{M_0}}} = M_r^*}&{\frac{{{\alpha _c}}}{G}\frac{{{\rho _0}}}{{{b^2}}} = \alpha _r^*}
+\end{array} \hfill \\
+  T\left( {\mathbf{k}} \right) = 4\pi k_x^2k_y^2/{k^4} \hfill \\ 
+\end{gathered} \]
+Ekkor:
+\begin{equation} \label{eq:matrix_det_to0}
+\tcbhighmath[borderline={1pt}{0pt}{black,solid}]{
+\left( {\begin{array}{*{20}{c}}
+  {\lambda  + Ak_x^2}&{i\left( {{{\tilde \tau }_r} + {{\tilde \tau }_f}} \right){k_x}}&0 \\ 
+  {i\left( {{{\tilde \tau }_r} - \frac{{{{\tilde \tau }_f}}}{2}} \right){k_x}}&{\lambda  + Dk_x^2 + T}&{ - i{\beta ^*}T\frac{{{k^2}}}{{{k_y}}}} \\ 
+  0&{i4\pi M_r^*{\beta ^*}{k_y}}&{\lambda + \left( {\alpha _r^* + 4\pi {\beta ^{ * 2}}} \right)M_r^*{k^2}} 
 \end{array}} \right)\left( {\begin{array}{*{20}{c}}
   {\delta \rho } \\ 
   {\delta \kappa } \\ 
   {{\delta _c}} 
 \end{array}} \right) = 0.}
 \end{equation}
+Ez akkor lehetséges, ha a mátrix determinánsa $0$. Adott paraméterek mellett ez feltételt szab $lambda$ és $\mathbf{k}$ értékeire. A kérdés az, hogy milyen paraméterértékek mellett lesz pozitív $\lambda$  értékű megoldás, és ahol $\lambda$ maximális, ott mennyi $\mathbf{k}$ értéke.
+
+\subsection{A determináns vizsgálata}
+\subsubsection{Visszatekintés az oldott atom nélküli esetre}
+A CISM-es könyv 131.\ oldalán találjuk az oldott atomok nélküli esetet, ahol csak $\kappa$ és $\rho$ mennyiségek időfejlődését vizsgálják (a $\chi$ fejlődése adott, itt \aref{eq:lin_ed_chi}.\ egyenlet miatt, oldott atom nélkül pedig a $\delta c$ tag nélkül). A megoldandó feladat ott az, hogy \aref{eq:matrix_det_to0}.\ mátrix jobb felső $2 \times 2$-es részének legyen 0 a determinánsa, azaz
+\[\left( {\lambda  + Ak_x^2} \right)\left( {\lambda  + Dk_x^2 + T} \right) + k_x^2B = 0,\]
+ahol $B$ a deformáció sebességének egy függvénye, $B = \left( {{{\tilde \tau }_r} + {{\tilde \tau }_f}} \right)\left( {{{\tilde \tau }_r} - {{\tilde \tau }_f}/2} \right)$. Ebből kifejezve a lehetséges két gyököt:
+
+\begin{equation} \label{eq:lambda_k}
+{\lambda _ \pm }\left( {\mathbf{k}} \right) =  - \underbrace {\frac{{\left( {A + D} \right)k_x^2 + T\left( {\mathbf{k}} \right)}}{2}}_E \pm \frac{{\sqrt {{{\left[ {\left( {A + D} \right)k_x^2 + T\left( {\mathbf{k}} \right)} \right]}^2} - 4k_x^2\left[ {B  + A\left( {Dk_x^2 + T\left( {\mathbf{k}} \right)} \right)} \right]} }}{2}.
+\end{equation}
+A nagyobbik gyököt akkor kapjuk, ha a $+$ előjeles megoldást választjuk. A gyök előtti tagot $E$-nek elnevezve kapjuk, hogy
+\[{\lambda _ + } =  - E \pm \frac{{\sqrt {{E^2} - 4k_x^2\left[ {B  + A\left( {Dk_x^2 + T} \right)} \right]} }}{2}.\]
+Ebből látható, hogy
+\[{\lambda _ + } > 0 \Leftrightarrow B  + A\left( {Dk_x^2 + T} \right) < 0.\]
+$T$ pozitív, és ha $A$ és $D$ is, akkor $B$ kell, hogy negatív legyen. $B=-1$, $A=D=1$ esetén ábrázolva \aref{eq:lambda_k}.\ egyenlet ${\lambda _ + }\left( {\mathbf{k}} \right)$ függvényét, láthatjuk, hogy mely $\mathbf{k}$ értékek mellett lesz pozitív $\lambda$ megoldás.
+
+\subsection{Oldott atomos általános esete}
+\Aref{eq:matrix_det_to0} egyenlet mátrixa $\lambda$ nélkül legyen $M$. Ekkor a keresett determináns:
+\[\det \left( {M + \lambda I} \right) = \underbrace {\left( {{M_{11}} + \lambda } \right) \cdot \left( {{M_{22}} + \lambda } \right) \cdot \left( {{M_{33}} + \lambda } \right)}_{P\left( {{\lambda ^3}} \right)} - \underbrace {\left( {{M_{11}} + \lambda } \right){M_{23}}{M_{32}}}_{P\left( \lambda  \right)} - \underbrace {{M_{12}}{M_{21}}\left( {{M_{33}} + \lambda } \right)}_{P\left( \lambda  \right)}.\]
+A determináns néhány tulajdonsága.
+\begin{enumerate}
+\item A komplex mátrixelemek ellenére csak valós együtthatókat tartalmaznak, mert a komplex $M_{12}$ és $M_{21}$-nek csak a szorzata jelenik meg, akárcsak $M_{23}$ és $M_{32}$ esetében.
+\item A $M_{23}$ és $M_{32}$ elemeinek a szorzatából kiesik $k_y$, tehát $k_y$ magában nem jelenik meg.
+\item Egy valós harmadfokú polinomnak mindig van legalább 1 valós gyöke.
+\end{enumerate}
+Az általános eset haszontalanul hosszú.
+
+\subsection{Oldott atomos speciális esetei}
+Valamilyen speciális esetben még van esély a megoldásra. Ilyen speciális eset lehet:
+
+\begin{enumerate}
+\item Ha az oldott atomok sokkal mobilisabbak, mint a diszlokációk. Ekkor igazából \aref{eq:chi}.\ egyenletének $\frac{{\delta {P_s}}}{{\delta \chi }} = 0$ feltételéhez hasonlóan \aref{eq:c_pot}. egyenlet képletét is módosítani kell. Ha jól érzem (de Groma szerint nem), ekkor $M_{33}$ értéke nagy lesz, így $M_{33} > \lambda$ miatt a harmadrendű tagból másodrendű tag lesz, mert a mátrix $3,3$ elemében eltűnik a $\lambda$. Ez a közelítés a valóságban jó eséllyel működik ott, ahol a diszlokációk nem szakadnak ki az oldott atomok felhőjéből.
+
+\item Előírjuk, hogy az oldott atom koncentrációja az előjeles diszlokációsűrűség koncentrációjával kell arányos legyen. Ez azt jelenti, hogy az oldott atom azonnal leköveti a diszlokáció mozgását.
+
+\item Kis koncentrációjú határeset: ekkor lehetne vizsgálni perturbatívan, hogy az oldott atomok nélkül kialakuló esethez képest hogyan változik a hullámhossz. Ez akkor is alkalmazható, ha az oldott atomok mobilitása nem nagyobb sokkal a diszlokációkénál.
+\end{enumerate}
+
+\section{Megoldás gyors diffúzió esetén}
+Tekintve, hogy \aref{eq:matrix_det_to0}.\ egyenlet általános megoldása bonyolult, azt az esetet vizsgáljuk, amikor az oldott atomok diffúziója elég gyors. Ekkor \aref{eq:c_pot}.\ és \aref{eq:c}.\ egyenletek helyett a $\frac{{\delta {P_s}[c]}}{{\delta c}} = \mu_c$ feltételből azt kapjuk, hogy
+\begin{equation} \label{eq:fd_c}
+\tcbhighmath[borderline={1pt}{0pt}{blue,solid}]{
+\mu_c = {\alpha _c} \cdot \left( {c - {c_\infty }} \right) - \beta  \cdot \Delta \chi.}
+\end{equation}
+A $\rho$-ra és $\kappa$-ra felírt mozgásegyeneltek nem változnak.
+\subsection{Mozgásegyenletek megoldása lineáris stabilitáselemzéssel}
+\Aref{eq:eom}.\ egyenlethez képest a módosítás az, hogy \aref{eq:c}.\ egyenlet helyett \aref{eq:fd_c}.\ egyenletet kell használni, így a megoldandó mozgásegyenletek:
+\begin{gather}
+\tcbhighmath[borderline={1pt}{0pt}{black,solid}]{
+\begin{aligned}
+0 & = - \frac{{1 - \nu }}{{2\mu }}{\Delta ^2}\chi  + b\cdot\partial_y\kappa - \beta  \cdot \Delta c \\
+  \mu_c & = {\alpha _c} \cdot \left( {c - {c_\infty }} \right) - \beta  \cdot \Delta \chi \\ 
+    {\partial _t}\rho  &  =  - {M_0}b{\partial _x}\left\{ {\kappa {\tau _{{\text{mf}}}} - \frac{\kappa }{\rho }GbD{\partial _x}\kappa  - GbA{\partial _x}\rho } \right\} \\ 
+  {\partial _t}\kappa  &  =  - {M_0}b{\partial _x}\left\{ {\rho {\tau _{{\text{mf}}}} - \rho \alpha \mu b\sqrt \rho - GbD{\partial _x}\kappa  - \frac{\kappa }{\rho } GbA{\partial _x}\rho } \right\}
+\end{aligned}  }
+\end{gather}
+Mivel a potenciált \aref{eq:plastic_pot_wo_core_reg}.\ egyenletben már úgy definiáltuk, hogy a koncentráció csak a $\chi$-hez csatolódik, nem meglepő, hogy $\rho$ és $\kappa$ mozgásegyenleteiben csak $\chi$-n keresztül jelenik meg. Már itt elvégezhetnénk az első két egyenlet összevonását, de ez már le van írva a könyvben, így inkább előbb elvégzem a lineáris stabilitáselemzést.
+
+Ugyanúgy hullámmegoldásokat keresve egy homogén megoldás körül ugyanazokat az egyenleteket kapjuk $\chi$ alakjára, valamint $\rho$ és $\kappa$ időfejlődésére, mint amit \aref{eq:lin_ed_chi}, \aref{eq:lin_ed_rho}.\ és \aref{eq:lin_ed_kappa}.\ egyenletekben láthattunk. Különbség csak a koncentrációban lesz, \aref{eq:lin_ed_c}.\ egyenleteben, amelyet most a
+\[\begin{aligned}
+0 & = {\alpha _c}\left( {{c_{\infty} } + \delta {c_0} \cdot {e^{\ldots} } - {c_{\infty}}} \right) - \beta \Delta \left( {xy \cdot {\tau _0} + \delta {\chi _0} \cdot {e^{\ldots} }} \right)\\
+   &  = {\alpha _c}\delta {c_0} - \beta \delta {\chi _0} \cdot \left( { - {\rho _0}{k^2}} \right) \\ 
+\end{aligned}\]
+egyenletből számolva kapjuk, hogy
+\begin{equation} \label{eq:fd_c_elim}
+\tcbhighmath[borderline={1pt}{0pt}{blue,solid}]{\delta {c} =  - \frac{{\beta {\rho _0}}}{{{\alpha _c}}}{k^2} \cdot \delta {\chi}.}
+\end{equation}
+Ebben felhasználtuk, hogy a koncentrációban homogén megoldásból következik, hogy a kémiai potenciál 0, mert
+\[{\mu _c} = {\alpha _c}\underbrace {\left( {c - {c_\infty }} \right)}_0 - \beta \underbrace {\Delta \chi }_0 = 0.\]
+Idemásolva a $\chi$-re vonatkozó \told\ref{eq:lin_ed_chi}+as{}, $\rho$-ra vonatkozó \told\ref{eq:lin_ed_rho}+as{} és $\kappa$-ra vonatkozó \told\ref{eq:lin_ed_kappa}+as{} egyenleteit:
+\begin{align*}
+\delta \chi & = i\frac{{4\pi Gb}}{{\rho _0^{3/2}}}\frac{{{k_y}}}{{{k^4}}} \cdot \delta \kappa  + \frac{{4\pi G}}{{{\rho _0}}}\beta \frac{1}{{{k^2}}} \cdot \delta c,\\
+0 & = \left( {\lambda  + Ak_x^2} \right) \cdot \delta \rho  + i\frac{{{\tau _0}}}{{bG\sqrt {{\rho _0}} }}{k_x} \cdot \delta \kappa,\\
+0 & = \lambda \delta\kappa  + i\frac{{{\tau _0}}}{{bG\sqrt {{\rho _0}} }}{k_x} \cdot \delta \rho  - i\frac{{\rho _0^{3/2}}}{{bG}}k_x^2{k_y} \cdot \delta \chi  - i\frac{3}{2}\frac{{\alpha \mu b\sqrt {{\rho _0}} }}{{Gb\sqrt {{\rho _0}} }}{k_x} \cdot \delta \rho  + Dk_x^2 \cdot \delta \kappa.
+\end{align*}
+Behelyettesítve \aref{eq:fd_c_elim}.\ egyenletből $\delta\chi$ egyenletébe, eliminálhatjuk a maradék kettőből $\delta\chi$-t.
+\[\begin{aligned}
+  \delta \chi  &  = i\frac{{4\pi Gb}}{{\rho _0^{3/2}}}\frac{{{k_y}}}{{{k^4}}} \cdot \delta \kappa  - \frac{{4\pi G}}{{{\rho _0}}}\beta \frac{1}{{{k^2}}} \cdot \frac{{\beta {\rho _0}}}{{{\alpha _c}}}{k^2}\delta \chi  \\ 
+   &  = i\frac{{4\pi Gb}}{{\rho _0^{3/2}}}\frac{1}{{1 + 4\pi G\frac{{{\beta ^2}}}{{{\alpha _c}}}}}\frac{{{k_y}}}{{{k^4}}} \cdot \delta \kappa  \\ 
+\end{aligned} \]
+Láthatjuk, hogy ugyanaz a tag jön be, mint ami a CISM könyv 74-es egyenletében. \Aref{eq:lin_ed_kappa}.\ egyeneltben, vagyis a $\kappa$-ra vonatkozó egyenletben van csak $\chi$ függés, így csak azt kell módosítani, a $\rho$-ra vonatkozó egyenletet pedig nem módosítani. Mivel a koncentrációt kifejezhetjük $\chi$-vel, így a $\kappa$ teljes, új módosított mozgásegyenletében már nem lesz koncentráció. A módosított tag:
+\[\begin{aligned}
+   - \frac{{i\rho _0^{3/2}k_x^2{k_y}}}{{bG}} \cdot \delta \chi  &  =  - \frac{{i\rho _0^{3/2}k_x^2{k_y}}}{{bG}} \cdot i\frac{{4\pi Gb}}{{\rho _0^{3/2}}}\frac{1}{{1 + 4\pi G\frac{{{\beta ^2}}}{{{\alpha _c}}}}}\frac{{{k_y}}}{{{k^4}}} \cdot \delta \kappa  \\ 
+   &  = \frac{1}{{1 + 4\pi G\frac{{{\beta ^2}}}{{{\alpha _c}}}}}4\pi \frac{{k_x^2k_y^2}}{{{k^4}}}\delta \kappa  \\ 
+   &  = \frac{1}{{1 + 4\pi G\frac{{{\beta ^2}}}{{{\alpha _c}}}}}T\left( {\mathbf{k}} \right)\delta \kappa.  \\ 
+\end{aligned} \]
+Így bevezetve a
+\[{{T_c}\left( {\mathbf{k}} \right)} = \frac{1}{{1 + 4\pi G\frac{{{\beta ^2}}}{{{\alpha _c}}}}}T\left( {\mathbf{k}} \right)\]
+jelölést, ugyanazt kapjuk, mint az oldott atom nélküli esetben, csak $T$ helyett $T_c$-vel.
+\begin{equation*}
+\left({\begin{array}{*{20}{c}}
+  {\lambda_c  + Ak_x^2}&{i\frac{{{\tau _0}}}{{bG\sqrt {{\rho _0}} }}{k_x}} \\ 
+  {i\left( {{\tau _r} - \frac{{{\tau _f}}}{2}} \right)\frac{1}{{bG\sqrt {{\rho _0}} }}{k_x}}&{\lambda_c  + Dk_x^2 + {T_c}\left( {\mathbf{k}} \right)}
+\end{array}} \right)\left( {\begin{array}{*{20}{c}}
+  {\delta \rho } \\ 
+  {\delta \kappa }
+\end{array}} \right) = 0.
+\end{equation*}
+Ez nem változtatja meg lényegesen \aref{eq:lambda_k}.\ egyenletet, amelynek most az új alakja
+
+\begin{equation} \label{eq:lambda_c_k}
+{\lambda _{c, + }}\left( {\mathbf{k}} \right) =  - \frac{{\left( {A + D} \right)k_x^2 + {T_c}\left( {\mathbf{k}} \right)}}{2} + \frac{{\sqrt {{{\left[ {\left( {A + D} \right)k_x^2 + {T_c}\left( {\mathbf{k}} \right)} \right]}^2} - 4k_x^2\left[ {B  + A\left( {Dk_x^2 + {T_c}\left( {\mathbf{k}} \right)} \right)} \right]} }}{2}.
+\end{equation}
+Beszorozva $T/T_c$-vel, láthatjuk, hogy $\lambda_{c,+}$, $A$ és $D$ elsőfokon, $B$ másodfokon átskálázódik. Tehát az új $A$, $D$ és $B$ paraméterek függvényében minden ugyanolyan alakú.
 \end{document}
+
+
+
+
