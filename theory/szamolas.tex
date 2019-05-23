@@ -227,13 +227,13 @@ amelyben
 1/{t_0} = {b^2}G{\rho _0}{M_0}.
 \end{equation}
 A behelyettesítés után a deriváló operátorok az alábbi sajátértéket veszik fel:
-\[\begin{aligned}
+\begin{align} \label{eq:sajat_ertek_op}
   {\partial _t} &  \to \lambda /t_0 \\ 
   {\partial _x} &  \to i\sqrt {{\rho _0}}  \cdot {k_x} \\ 
   {\partial _y} &  \to i\sqrt {{\rho _0}}  \cdot {k_y} \\ 
   \Delta  &  \to {\left( {i\sqrt {{\rho _0}} } \right)^2} \cdot \left( {k_x^2 + k_y^2} \right) =  - {\rho _0} \cdot {k^2} \\ 
   {\Delta ^2} &  \to {\left( {i\sqrt {{\rho _0}} } \right)^4} \cdot \left( {k_x^4 + k_y^4 + 2k_x^2k_y^2} \right) = \rho _0^2 \cdot {k^4}. 
-\end{aligned} \]
+\end{align}
 
 \subsubsection{Másodrendű feszültségtenzor}
 \[\begin{aligned}
@@ -451,8 +451,45 @@ Itt ${P_{dc}}\left[ {\chi ,\rho ,\kappa } \right]$. Ennek a funkcionális deriv�
 \end{aligned}  }
 \end{gather}
 \subsection{Lineáris stabilitáselemzés}
+A korábbi receptet követve keressük az egyes mennyiségeket
+\[f\left( {{\mathbf{r}},t} \right) = {f_0} + \delta f\left( {{\mathbf{r}},t} \right) = {f_0} + \delta {f_0} \cdot \exp \left( {\frac{\lambda }{{{t_0}}}t + i\sqrt {{\rho _0}}  \cdot {\mathbf{kr}}} \right)\]
+alakban. Az operátorok felveszik \aref{eq:sajat_ertek_op}.\ egyenletben leírt sajátértékeiket, valamint van egy új operátorunk, amelyre
+\[{\Delta ^3} \to {\left( {i\sqrt {{\rho _0}} } \right)^6} \cdot {\left( {k_x^2 + k_y^2} \right)^3} =  - \rho _0^3 \cdot {k^6}.\]
+Ekkor \aref{eq:eom_dc}.\ egyenlet $\chi$-re vonatkozó egyenletéből kifejezhetjük $\delta \chi$-t:
+\[
+  0  =  - \frac{{1 - \nu }}{{2\mu }}\rho _0^2 \cdot {k^4} \cdot \delta \chi  + b \cdot i\sqrt {{\rho _0}}  \cdot {k_y} \cdot \delta \kappa  - 2{a^2}\rho _0^3 \cdot {k^6} \cdot \delta \chi,\]
+amelyből 
+\begin{equation} \label{eq:lin_ed_chi_dc}
+\tcbhighmath[borderline={1pt}{0pt}{blue,solid}]{
+\delta \chi  = i\frac{{b\sqrt {{\rho _0}} }}{{\frac{{1 - \nu }}{{2\mu }}\rho _0^2 \cdot {k^4} + 2{a^2}\rho _0^3 \cdot {k^6}}}{k_y} \cdot \delta \kappa.}
+\end{equation}
+A teljes diszlokációsűrűség időfejlődését a \aref{eq:lin_ed_rho}.\ egyenlet szerint egyáltalán nem érinti $\chi$,
+\begin{equation*}
+\tcbhighmath[borderline={1pt}{0pt}{blue,solid}]{
+0 = \left( {\lambda  + Ak_x^2} \right) \cdot \delta \rho  + i\frac{{{\tau _0}}}{{bG\sqrt {{\rho _0}} }}{k_x} \cdot \delta \kappa, }
+\end{equation*}
+és az előjeleset is csak $\delta \chi$-n keresztül \aref{eq:lin_ed_kappa}.\ egyenlet szerint:
+\[0 = \lambda \delta \kappa  + i\left( {\frac{{{\tau _0}}}{{bG\sqrt {{\rho _0}} }} - \frac{3}{2}\frac{{\alpha \mu }}{G}} \right){k_x} \cdot \delta \rho  - i\frac{{\rho _0^{3/2}}}{{bG}}k_x^2{k_y} \cdot \delta \chi  + Dk_x^2 \cdot \delta \kappa .\]
+Behelyettesítve ebbe \aref{eq:lin_ed_chi_dc}.\ egyenlettel, kapjuk, hogy 
+\begin{equation} \label{eq:lin_ed_kappa_dc}
+\tcbhighmath[borderline={1pt}{0pt}{blue,solid}]{
+0 = \lambda \delta \kappa  + i\left( {\frac{{{\tau _0}}}{{bG\sqrt {{\rho _0}} }} - \frac{3}{2}\frac{{\alpha \mu }}{G}} \right){k_x}\delta \rho  + {T_{dc}} \cdot \delta \kappa  + Dk_x^2 \cdot \delta \kappa,}
+\end{equation}
+amelyben bevezettem a 
+\[{T_{dc}}\left( {{\mathbf{k}},{a^2}G{\rho _0}} \right) = \frac{{4\pi  \cdot k_x^2k_y^2}}{{{k^4} + {{\tilde a}^2} \cdot {k^6}}}\quad {{\tilde a}^2} = 8\pi {a^2}G{\rho _0}\]
+jelöléseket, és így ugyanolyan mátrixegyenletet kell megoldani, mint a CISM könyvben, egészen pontosan $\lambda$-ra azt kapjuk, hogy 
+\[{\lambda _{dc, + }} =  - \frac{{\left( {A + D} \right)k_x^2 + {T_{dc}}}}{2} + \frac{{\sqrt {{{\left[ {\left( {A + D} \right)k_x^2 + {T_{dc}}} \right]}^2} - 4k_x^2\left[ {B + A\left( {Dk_x^2 + {T_{dc}}} \right)} \right]} }}{2}.\]
+
+\subsubsection{Regularizáció erősségének hatása a kiválasztott hullámhosszon}
+\paragraph{Ha $\tilde a$ kicsi}, akkor ${T_{dc}} = T$, vagyis visszakapjuk a core regularizáció nélküli esetét. Ez logikus is, hiszen a core hatását elhanyagoltuk ekkor. 
+
+\paragraph{Ha $\tilde a$ nagy}, akkor a ${T_{dc}}$ értéke elhanyagolható lesz, ekkor pedig a
+\[\mathop {\lim }\limits_{\tilde a \to \infty } {\lambda _{dc, + }} =  - \frac{{\left( {A + D} \right)k_x^2}}{2} + \frac{{\sqrt {{{\left[ {\left( {A + D} \right)k_x^2} \right]}^2} - 4k_x^2\left[ {B + A\left( {Dk_x^2} \right)} \right]} }}{2}\]
+egyenletet kell megoldani. Ezt ábrázolhatjuk $-B = A = D = 1$ értékek mellett.
+
+
+\paragraph{Ha $\tilde a \approx 1$}, akkor érdekes a jelenség igazán.
+
 \end{document}
-
-
 
 
