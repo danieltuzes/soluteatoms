@@ -77,13 +77,15 @@ Ebben már elhanyagoltunk egy $ \kappa ^2 / \rho ^2 $-es tagot.
 \begin{equation} \label{eq:c_conti}
 \partial_t c =  \nabla \left( {{M_c} \cdot \nabla \frac{{\delta P}}{{\delta c}}} \right).
 \end{equation}
+Illetve, ha gyors diffúziót feltételezünk, akkor $c$-ben az egyensúly rövid idő alatt úgy áll be, hogy
+\[\frac{{\delta P}}{{\delta c}} = \mu_c \] teljesüljön.
 
 \subsection{Megoldási terv}
 Az \cref{eq:rho_eom,eq:kappa_eom,eq:c_conti}-en lineáris stabilitáselemzést lehet végezni, ami egy $3\times3$-as mátrix vizsgálatához vezet: a mátrix determinánsa legyen 0.
 
 
 
-\section{Megoldás core regularizáció nélkül}
+\section{Oldott atom hatása core regularizáció nélkül}
 \subsection{A mozgásegyeneltek felírása}
 Nézzük meg, hogy core regularizáció nélkül mire jutunk. A diszlokációk korrelációjából származó tagokat is tartalmaz ez a potenciál, így reméljük, hogy hátha megfelelően elkeni a core szinguláris problémáját. A potenciált tehát $a=0$ és $a'=0$ mellett:
 \begin{equation} \label{eq:plastic_pot_wo_core_reg}
@@ -101,7 +103,7 @@ A $\frac{{\delta {P_s}}}{{\delta \chi }} = 0$ feltételből:
   {\partial _t}\kappa  &  = {M_0}{\partial _x}\left\{ {\rho \left[ {{\partial _x}\frac{{\delta P}}{{\delta \kappa }} + \alpha \mu {b^2}\sqrt \rho } \right] + \kappa  \cdot {\partial _x}\frac{{\delta P}}{{\delta \rho }}} \right\}.
 \end{aligned}}
 \end{gather}
-Ennek megadásához el kell végezni a $\frac{{\delta P}}{{\delta \rho }}$ és $\frac{{\delta P}}{{\delta \kappa }}$ deriválást. Először $\kappa$-ra az egyes tagokon elvégezve:
+Ennek megadásához el kell végezni a $\frac{{\delta P}}{{\delta \rho }}$ és $\frac{{\delta P}}{{\delta \kappa }}$ deriválást.\paragraph{Először $\kappa$-ra} az egyes tagokon elvégezve:
 \begin{align*}
   {P_{s,2}}\left[ {\kappa  + \delta \kappa } \right] &  = \int_{{L^2}} {b\chi \left( {\frac{\partial }{{\partial y}}\left( {\kappa  + \delta \kappa } \right)} \right)dA}  \\ 
    &  = \underbrace {\int_{{L^2}} {b\chi \left( {\frac{\partial }{{\partial y}}\kappa } \right)dA} }_{{P_{s,2}}\left[ \kappa  \right]} + \int_{{L^2}} {b\chi \left( {\frac{\partial }{{\partial y}}\delta \kappa } \right)dA}  \\ 
@@ -119,7 +121,7 @@ A \cref{eq:ps2_kappa,eq:ps4_kappa} egyenletekből
 \begin{equation} \label{eq:ps_kappa}
 \tcbhighmath[borderline={1pt}{0pt}{blue,dashed}]{\frac{{\delta {P_s}\left[ \kappa  \right]}}{{\delta \kappa }} = G{b^2}D\frac{\kappa }{\rho } - b\frac{{\partial \chi }}{{\partial y}}.}
 \end{equation}
-Elvégezve $\rho$-ra az egyes tagokon:
+\paragraph{Elvégezve $\rho$-ra} az egyes tagokon:
 \[\begin{aligned}
   {P_{s,3}}\left[ {\rho  + \delta \rho } \right] &  = \int_{{L^2}} {G{b^2}A \cdot \left( {\rho  + \delta \rho } \right)\underbrace {\ln \left( {\left( {\rho  + \delta \rho } \right)/{\rho _0}} \right)}_{\ln \left( {\rho /{\rho _0}} \right) + \delta \rho /\rho }} dA \\ 
    &  = {P_{s,3}}\left[ \rho  \right] + \int_{{L^2}} {G{b^2}A \cdot \delta \rho  \cdot \ln \left( {\rho /{\rho _0}} \right)} dA + \int_{{L^2}} {G{b^2}A \cdot \delta \rho } dA, \\ 
@@ -183,7 +185,7 @@ amelyben $M_c$ és $c_{\infty}$ állandó térben, így
 0 & = - \frac{{1 - \nu }}{{2\mu }}{\Delta ^2}\chi  + b\cdot\partial_y\kappa - \beta  \cdot \Delta c \\ 
     {\partial _t}\rho  &  =  - {M_0}b{\partial _x}\left\{ {\kappa {\tau _{{\text{mf}}}} - \frac{\kappa }{\rho }GbD{\partial _x}\kappa  - GbA{\partial _x}\rho } \right\} \\ 
   {\partial _t}\kappa  &  =  - {M_0}b{\partial _x}\left\{ {\rho {\tau _{{\text{mf}}}} - \rho \alpha \mu b\sqrt \rho - GbD{\partial _x}\kappa  - \frac{\kappa }{\rho } GbA{\partial _x}\rho } \right\} \\
-  \partial_t c & =  {M_c}{\alpha _c}\Delta c - \beta {M_c}\Delta^2 \chi
+  \partial_t c & =  {M_c}{\alpha _c}\Delta c - \beta {M_c}\Delta^2 \chi.
 \end{aligned}  }
 \end{gather}
 Ezek megoldását keressük egy egyensúlyi állapot körül,
@@ -227,8 +229,8 @@ amelyben
 A behelyettesítés után a deriváló operátorok az alábbi sajátértéket veszik fel:
 \[\begin{aligned}
   {\partial _t} &  \to \lambda /t_0 \\ 
+  {\partial _x} &  \to i\sqrt {{\rho _0}}  \cdot {k_x} \\ 
   {\partial _y} &  \to i\sqrt {{\rho _0}}  \cdot {k_y} \\ 
-  {\partial _y} &  \to i\sqrt {{\rho _0}}  \cdot {k_x} \\ 
   \Delta  &  \to {\left( {i\sqrt {{\rho _0}} } \right)^2} \cdot \left( {k_x^2 + k_y^2} \right) =  - {\rho _0} \cdot {k^2} \\ 
   {\Delta ^2} &  \to {\left( {i\sqrt {{\rho _0}} } \right)^4} \cdot \left( {k_x^4 + k_y^4 + 2k_x^2k_y^2} \right) = \rho _0^2 \cdot {k^4}. 
 \end{aligned} \]
@@ -261,13 +263,13 @@ Az előjeles diszlokációsűrűség fejlődésére pedig:
   \underbrace {\left( {{\rho _0} + \delta \rho } \right) \cdot {\partial _x}{\partial _y}\left( {xy \cdot {\tau _0} + \delta \chi } \right)}_{\underbrace {{\rho _0}{\tau _0}}_{{\text{konst}}{\text{.}}} + \delta \rho  \cdot {\tau _0} + {\rho _0}{\partial _x}{\partial _y}\chi  + \underbrace {\delta \rho  \cdot \delta \chi  \cdot  \ldots }_{{\text{magasabb rend}}}} - \left( {{\rho _0} + \delta \rho } \right)\alpha \mu b\underbrace {\sqrt {{\rho _0} + \delta \rho } }_{ \approx \left[ {1 + \delta \rho /\left( {2{\rho _0}} \right)} \right]\sqrt {{\rho _0}} } -  \hfill \\
   \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad  - GbD{\partial _x}\delta\kappa  - \underbrace {\frac{{\delta \kappa }}{{{\rho _0} + \delta \rho }}GbA{\partial _x}\left( {{\rho _0} + \delta \rho } \right)}_{{\text{konst}}{\text{. deriv - ja}} + {\text{magasabb rend}}} \hfill \\ 
 \end{gathered}  \right\} \\ 
-   &  =  - {M_0}b{\partial _x}\left\{ {\delta \rho  \cdot {\tau _0} + {\rho _0}{\partial _x}{\partial _y}\delta \chi  - \left( {{\rho _0} + \delta \rho } \right)\alpha \mu b\left[ {1 + \delta \rho /\left( {2{\rho _0}} \right)} \right]\sqrt {{\rho _0}}  - GbD{\partial _x}\delta\kappa } \right\} \\ 
-   &  =  - {M_0}bi\sqrt {{\rho _0}} {k_x}\left\{ {\delta \rho  \cdot {\tau _0} + {\rho _0}i\sqrt {{\rho _0}} {k_x}i\sqrt {{\rho _0}} {k_y}\delta \chi  - \frac{3}{2}\alpha \mu b\delta \rho \sqrt {{\rho _0}}  - GbDi\sqrt {{\rho _0}} {k_x}\delta\kappa } \right\} \\ 
+   & =  - {M_0}b{\partial _x}\left\{ {\delta \rho  \cdot {\tau _0} + {\rho _0}{\partial _x}{\partial _y}\delta \chi  - \underbrace {\left( {{\rho _0} + \delta \rho } \right)\alpha \mu b\left[ {1 + \delta \rho /\left( {2{\rho _0}} \right)} \right]\sqrt {{\rho _0}} }_{\frac{3}{2}\alpha \mu b \cdot \delta \rho } - GbD{\partial _x}\delta \kappa } \right\} \\ 
+   &  =   - {M_0}bi\sqrt {{\rho _0}} {k_x}\left\{ {\left( {{\tau _0} - \frac{3}{2}\alpha \mu b\sqrt {{\rho _0}} } \right) \cdot \delta \rho  + {\rho _0}i\sqrt {{\rho _0}} {k_x}i\sqrt {{\rho _0}} {k_y}\delta \chi  - GbDi\sqrt {{\rho _0}} {k_x}\delta \kappa } \right\} \\ 
 \end{aligned} \]
 Ebből
 \begin{equation} \label{eq:lin_ed_kappa}
 \tcbhighmath[borderline={1pt}{0pt}{blue,solid}]{
-0 = \lambda \delta\kappa  + i\frac{{{\tau _0}}}{{bG\sqrt {{\rho _0}} }}{k_x} \cdot \delta \rho  - i\frac{{\rho _0^{3/2}}}{{bG}}k_x^2{k_y} \cdot \delta \chi  - i\frac{3}{2}\frac{{\alpha \mu b\sqrt {{\rho _0}} }}{{Gb\sqrt {{\rho _0}} }}{k_x} \cdot \delta \rho  + Dk_x^2 \cdot \delta \kappa.}
+0 = \lambda \delta \kappa  + i\left( {\frac{{{\tau _0}}}{{bG\sqrt {{\rho _0}} }} - \frac{3}{2}\frac{{\alpha \mu }}{G}} \right){k_x} \cdot \delta \rho  - i\frac{{\rho _0^{3/2}}}{{bG}}k_x^2{k_y} \cdot \delta \chi  + Dk_x^2 \cdot \delta \kappa .}
 \end{equation}
 
 \subsubsection{Oldott atom koncentráció}
@@ -364,14 +366,14 @@ Valamilyen speciális esetben még van esély a megoldásra. Ilyen speciális es
 \item Kis koncentrációjú határeset: ekkor lehetne vizsgálni perturbatívan, hogy az oldott atomok nélkül kialakuló esethez képest hogyan változik a hullámhossz. Ez akkor is alkalmazható, ha az oldott atomok mobilitása nem nagyobb sokkal a diszlokációkénál.
 \end{enumerate}
 
-\section{Megoldás gyors diffúzió esetén}
+\subsection{Megoldás gyors diffúzió esetén}
 Tekintve, hogy \aref{eq:matrix_det_to0}.\ egyenlet általános megoldása bonyolult, azt az esetet vizsgáljuk, amikor az oldott atomok diffúziója elég gyors. Ekkor \aref{eq:c_pot}.\ és \aref{eq:c}.\ egyenletek helyett a $\frac{{\delta {P_s}[c]}}{{\delta c}} = \mu_c$ feltételből azt kapjuk, hogy
 \begin{equation} \label{eq:fd_c}
 \tcbhighmath[borderline={1pt}{0pt}{blue,solid}]{
 \mu_c = {\alpha _c} \cdot \left( {c - {c_\infty }} \right) - \beta  \cdot \Delta \chi.}
 \end{equation}
 A $\rho$-ra és $\kappa$-ra felírt mozgásegyeneltek nem változnak.
-\subsection{Mozgásegyenletek megoldása lineáris stabilitáselemzéssel}
+\subsubsection{Mozgásegyenletek megoldása lineáris stabilitáselemzéssel}
 \Aref{eq:eom}.\ egyenlethez képest a módosítás az, hogy \aref{eq:c}.\ egyenlet helyett \aref{eq:fd_c}.\ egyenletet kell használni, így a megoldandó mozgásegyenletek:
 \begin{gather}
 \tcbhighmath[borderline={1pt}{0pt}{black,solid}]{
@@ -430,6 +432,25 @@ Ez nem változtatja meg lényegesen \aref{eq:lambda_k}.\ egyenletet, amelynek mo
 {\lambda _{c, + }}\left( {\mathbf{k}} \right) =  - \frac{{\left( {A + D} \right)k_x^2 + {T_c}\left( {\mathbf{k}} \right)}}{2} + \frac{{\sqrt {{{\left[ {\left( {A + D} \right)k_x^2 + {T_c}\left( {\mathbf{k}} \right)} \right]}^2} - 4k_x^2\left[ {B  + A\left( {Dk_x^2 + {T_c}\left( {\mathbf{k}} \right)} \right)} \right]} }}{2}.
 \end{equation}
 Beszorozva $T/T_c$-vel, láthatjuk, hogy $\lambda_{c,+}$, $A$ és $D$ elsőfokon, $B$ másodfokon átskálázódik. Tehát az új $A$, $D$ és $B$ paraméterek függvényében minden ugyanolyan alakú.
+
+\section{Core regularizáció oldott atom nélkül}
+Hogy megértsük az oldott atom esetét core regularizációval, érdemes először megnézni oldott atom nélkül, de core regularizációval a diszlokációmintázat-képződést. Ehhez \aref{eq:plastic_pot}.\ egyenletben definiált plasztikus potenciál oldott atomos tagjait elhanyagolva kapjuk, hogy 
+\begin{equation} \label{eq:plastic_pot_dc}
+{P_{dc}} = \int { - \frac{{1 - \nu }}{{4\mu }}{{\left( {\Delta \chi } \right)}^2} + b\chi \frac{{\partial \kappa }}{{\partial y}} + {a^2}{{\left| {\nabla \left( {{\text{ }}\Delta \chi } \right)} \right|}^2} + G{b^2}A\rho \ln \left( {\frac{\rho }{{{\rho _0}}}} \right) + \frac{{G{b^2}D}}{2}\frac{{{\kappa ^2}}}{\rho }{d^2}r}.
+\end{equation}
+Itt ${P_{dc}}\left[ {\chi ,\rho ,\kappa } \right]$. Ennek a funkcionális deriváltjaiból ugyanazokat az egyenleteket kapjuk $\kappa$ és $\rho$ időfejlődésére, mint \aref{eq:rho_kappa}.\ egyenletben. Az eltérés $\chi$-ben van, ugyanis itt \aref{eq:chi}.\ egyenlettel szemben, a $\frac{{\delta {P_{dc}}}}{{\delta \chi }} = 0$ feltételből azt kapjuk, hogy 
+\[ - \frac{{1 - \nu }}{{2\mu }}{\Delta ^2}\chi  + b\frac{{\partial \kappa }}{{\partial y}} + 2{a^2}{\Delta ^3}\chi  = 0.\]
+Így tehát most az alábbi egyenleteket kell megoldanunk:
+
+\begin{gather} \label{eq:eom_dc}
+\tcbhighmath[borderline={1pt}{0pt}{black,solid}]{
+\begin{aligned}
+0 & = - \frac{{1 - \nu }}{{2\mu }}{\Delta ^2}\chi  + b\frac{{\partial \kappa }}{{\partial y}} + 2{a^2}{\Delta ^3}\chi  \\ 
+    {\partial _t}\rho  &  =  - {M_0}b{\partial _x}\left\{ {\kappa {\tau _{{\text{mf}}}} - \frac{\kappa }{\rho }GbD{\partial _x}\kappa  - GbA{\partial _x}\rho } \right\} \\ 
+  {\partial _t}\kappa  &  =  - {M_0}b{\partial _x}\left\{ {\rho {\tau _{{\text{mf}}}} - \rho \alpha \mu b\sqrt \rho - GbD{\partial _x}\kappa  - \frac{\kappa }{\rho } GbA{\partial _x}\rho } \right\}.\\
+\end{aligned}  }
+\end{gather}
+\subsection{Lineáris stabilitáselemzés}
 \end{document}
 
 

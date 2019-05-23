@@ -1,4 +1,5 @@
 # soluteatoms
+Investigating the effect of solute atoms and core on dislocation pattern formation.
 
 ## About this file
 This is the readme file for my project hosted at [danieltuzes/soluteatoms](https://github.com/danieltuzes/soluteatoms). This file is manually created by me and contains some description of this project.
