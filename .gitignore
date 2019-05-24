@@ -1,0 +1,10 @@
+﻿*.aux
+*.out
+*.log
+*.gz
+*.pdf
+*.toc
+
+*.png
+
+!theory/figs
