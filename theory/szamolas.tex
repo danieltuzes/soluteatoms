@@ -16,7 +16,6 @@
 \usepackage{placeins}
 \usepackage{subcaption}
 \usepackage{epstopdf}
-\usepackage{media9}
 \usepackage{xcolor}
 \usepackage[hidelinks,unicode]{hyperref}
 \hypersetup{
@@ -477,50 +476,20 @@ Behelyettesítve ebbe \aref{eq:lin_ed_chi_dc}.\ egyenlettel, kapjuk, hogy
 0 = \lambda \delta \kappa  + i\left( {\frac{{{\tau _0}}}{{bG\sqrt {{\rho _0}} }} - \frac{3}{2}\frac{{\alpha \mu }}{G}} \right){k_x}\delta \rho  + {T_{dc}} \cdot \delta \kappa  + Dk_x^2 \cdot \delta \kappa,}
 \end{equation}
 amelyben bevezettem a 
-\[{T_{dc}}\left( {\mathbf{k}},{\tilde a}^2 \right) = \frac{{4\pi  \cdot k_x^2k_y^2}}{{{k^4} + {{\tilde a}^2} \cdot {k^6}}}\quad {{\tilde a}^2} = 8\pi {a^2}G{\rho _0}\]
+\[{T_{dc}}\left( {{\mathbf{k}},{a^2}G{\rho _0}} \right) = \frac{{4\pi  \cdot k_x^2k_y^2}}{{{k^4} + {{\tilde a}^2} \cdot {k^6}}}\quad {{\tilde a}^2} = 8\pi {a^2}G{\rho _0}\]
 jelöléseket, és így ugyanolyan mátrixegyenletet kell megoldani, mint a CISM könyvben, egészen pontosan $\lambda$-ra azt kapjuk, hogy 
 \[{\lambda _{dc, + }} =  - \frac{{\left( {A + D} \right)k_x^2 + {T_{dc}}}}{2} + \frac{{\sqrt {{{\left[ {\left( {A + D} \right)k_x^2 + {T_{dc}}} \right]}^2} - 4k_x^2\left[ {B + A\left( {Dk_x^2 + {T_{dc}}} \right)} \right]} }}{2}.\]
 
-\subsection{Regularizáció erősségének hatása a kiválasztott hullámhosszon}
-\paragraph{Ha $\tilde a$ értéke közepes}, akkor érdekes a jelenség igazán. A $k \in \left[ {0,1} \right]$ tartományon ${k^4} \approx {\tilde a^2}{k^6} \Leftrightarrow {\tilde a^2} \in \left[ {1,100} \right]$.
-
+\subsubsection{Regularizáció erősségének hatása a kiválasztott hullámhosszon}
 \paragraph{Ha $\tilde a$ kicsi}, akkor ${T_{dc}} = T$, vagyis visszakapjuk a core regularizáció nélküli esetét. Ez logikus is, hiszen a core hatását elhanyagoltuk ekkor. 
 
 \paragraph{Ha $\tilde a$ nagy}, akkor a ${T_{dc}}$ értéke elhanyagolható lesz, ekkor pedig a
 \[\mathop {\lim }\limits_{\tilde a \to \infty } {\lambda _{dc, + }} =  - \frac{{\left( {A + D} \right)k_x^2}}{2} + \frac{{\sqrt {{{\left[ {\left( {A + D} \right)k_x^2} \right]}^2} - 4k_x^2\left[ {B + A\left( {Dk_x^2} \right)} \right]} }}{2}\]
-egyenletet kell megoldani.
+egyenletet kell megoldani. Ezt ábrázolhatjuk $-B = A = D = 1$ értékek mellett.
 
-Az alábbi ábrán látható az átmenet az gyenge core regularizációtól az erősig, illetve egy videó is az átmenetről.
-\begin{figure}
-\centering
-\includemedia[label=core_reg,
-addresource=video/1.flv,
-activate=pageopen,
-passcontext,
-flashvars={source=video/1.flv&loop=true}]{\includegraphics[width=0.6\textwidth]{video/1.png}}{VPlayer.swf}
-\caption{Videó}
-\end{figure}
 
-\begin{figure}[h]
-\centering
-\begin{subfigure}[t]{0.495\linewidth}
-\centering\includegraphics[scale=0.95]{"lambda_k_surface_atsq=0"}
-\caption{Core regularizáció nélkül}
-\end{subfigure}
-\begin{subfigure}[t]{0.495\linewidth}
-\centering\includegraphics[scale=0.95]{"lambda_k_surface_atsq=1"}
-\caption{Gyenge core regularizációval}
-\end{subfigure}
-\begin{subfigure}[t]{0.495\linewidth}
-\centering\includegraphics[scale=0.95]{"lambda_k_surface_atsq=10"}
-\caption{Közepes core regularizációval}
-\end{subfigure}
-\begin{subfigure}[t]{0.495\linewidth}
-\centering\includegraphics[scale=0.95]{"lambda_k_surface_atsq=100"}
-\caption{Erős core regularizációval}
-\end{subfigure}
-\caption{Különböző core regularizációval $\lambda_+$}
-\end{figure}
+\paragraph{Ha $\tilde a \approx 1$}, akkor érdekes a jelenség igazán.
+
 \end{document}
 
 
