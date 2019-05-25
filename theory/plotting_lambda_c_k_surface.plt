@@ -1,5 +1,5 @@
 # beállítások beállítása
-do for [atildesqindex = 0:100] {
+do for [βtildesqindex = 0:100] {
 reset
 set encoding utf8
 
@@ -8,9 +8,9 @@ A=1
 D=1
 B=-1
 T(x,y) = 4*pi * x**2 * y**2 / (x**2 + y**2)**2
-TDC(x,y,atildesq) = 4*pi * x**2 * y**2/((x**2 + y**2)**2 + atildesq * (x**2 + y**2)**3)
+TC(x,y,βtildesq) = 4*pi * x**2 * y**2/((x**2 + y**2)**2) * 1. / (1. + βtildesq)
 λ(x,y) = - ((A + D) * x**2 + T(x,y)) / 2 + sqrt(((A + D) * x**2 + T(x,y))**2 - 4 * x**2 * (B + A * (D * x**2 + T(x,y)))) / 2
-λDC(x,y,atildesq) = - ((A + D) * x**2 + TDC(x,y,atildesq)) / 2 + sqrt(((A + D) * x**2 + TDC(x,y,atildesq))**2 - 4 * x**2 * (B + A * (D * x**2 + TDC(x,y,atildesq)))) / 2
+λC(x,y,βtildesq) = - ((A + D) * x**2 + TC(x,y,βtildesq)) / 2 + sqrt(((A + D) * x**2 + TC(x,y,βtildesq))**2 - 4 * x**2 * (B + A * (D * x**2 + TC(x,y,βtildesq)))) / 2
 
 #formázási beállítások
 set size sq
@@ -26,13 +26,13 @@ set sample 500
 set isosample 500
 set cbrange [-0.3:0.3]
 load "diverging_palette.plt"
-atildesq = 0.1*1.1**atildesqindex + atildesqindex * 0.1 - 0.1
-print sprintf("atildesq = %f",atildesq)
-set title sprintf("{/:Italic λ}_+ oldott atom nélkül, ã^2=%.2f",atildesq)
+βtildesq = 0.1*1.1**βtildesqindex + βtildesqindex * 0.1 - 0.1
+print sprintf("βtilde^2 = %f",βtildesq)
+set title sprintf("{/:Italic λ}_{c,+} gyors diffúzió, core reg. nélkül, β\\~^2=%.2f",βtildesq)
 
 # az xy térkép beállítása
 set table "function.tmp"
-splot λDC(x,y,atildesq)
+splot λC(x,y,βtildesq)
 unset table
 
 # a kontúrvonalak beállítása
@@ -40,7 +40,7 @@ set contour
 set cntrparam points 10 levels discrete 0	
 unset surface
 set table "contour.tmp"
-splot λDC(x,y,atildesq)
+splot λC(x,y,βtildesq)
 unset table
 
 # a térkép és kontúrvonal együttes ábrázolása
@@ -49,14 +49,13 @@ unset key
 # terminál és file beállítása
 set term wxt
 
-obn = "lambda_k_surface"
+obn = "lambda_c_k_surface"
 set term pngcairo size 800,650 font "DejaVu Sans"
-set o obn .".png"
 
 # set term pdfcairo size 8cm,6.5cm font "DejaVu Sans"
-set o obn . sprintf("_atsqi=%d.png",atildesqindex)
+set o obn . sprintf("_btsqi=%d.png",βtildesqindex)
 
-p "function.dat" w image, "contour.dat" w l lt -1
+p "function.tmp" w image, "contour.tmp" w l lt -1
 }
 set o
 set term wxt

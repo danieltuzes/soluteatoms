@@ -45,7 +45,7 @@
 \tableofcontents
 
 \section{Ismertető}
-Szeretnénk egy olyan funkcionált felírni, aminek a megfelelő funkcionálderiváltjaiból kijönnek a megfelelő mozgásegyenletek. A funkcionál függvénye az alábbiaknak:
+Szeretnénk egy olyan funkcionált felírni, aminek a megfelelő funkcionál-deriváltjaiból kijönnek a megfelelő mozgásegyenletek. A funkcionál függvénye az alábbiaknak:
 \[P=P\left[ {\chi ,{\rho _ + },{\rho _ - },c} \right].\]
 Úgy képezzük az eredő potenciált, hogy összeadjuk a rugalmas közeg - diszlokációk önkonzisztens potenciálját, a diszlokációk mintázatképződésért felelős potenciált, illetve az oldott atomok önkölcsönhatásból és a nyomással való kölcsönhatásból származtatott potenciálokat.
 \[P = {P_{sc}} + {P_{corr}} + {P_{c - cp}}\]
@@ -54,7 +54,7 @@ A $P_{c - cp}$ tag lehet a $c\ln \left( c \right)$ alakú $M_c \sim c$ mobilitá
 P = \int \left[ \underbrace { - \frac{{1 - \nu }}{{4\mu }}{{\left( {\Laplace \chi } \right)}^2} + b\chi \frac{\partial \kappa}{\partial y} + \overbrace{a^2\left| {\nabla \left( \Laplace \chi  \right)} \right|^2}^{\text{core reg.}}}_{{\text{önkonzisztens tér}}} + \underbrace {G{b^2}A\rho \ln \left( {\frac{\rho }{{{\rho _0}}}} \right) + \frac{{G{b^2}D}}{2}\frac{{{\kappa ^2}}}{\rho }}_{{\text{diszlokációk korrelációjához}}} + \right. \\ 
 \left. + \underbrace {\frac{\alpha_c}{2} {{\left( {c - {c_\infty }} \right)}^2}}_{\substack{\text{oldott atom}\\\text{önkh.}}} - \underbrace {\beta c\left( {\Laplace \chi } \right)}_{\substack{\text{oldott atom}\\\text{nyomás kh-a}}} + \overbrace {a{'^2}\nabla \left( \Laplace \chi  \right) \cdot \nabla c}^{{\text{core reg.}}}\right] {d^2}r.
 \end{multline}
-Az egyenlet $\left[ {\chi ,{\rho _ + },{\rho _ - },c} \right]$-nak a függvénye, és az egyes argumentumok szerinti parciális derviáltakból 1-1 egyenletet kapunk. Sorrendben ezek az alábbiak.
+Az egyenlet $\left[ {\chi ,{\rho _ + },{\rho _ - },c} \right]$-nak a függvénye, és az egyes argumentumok szerinti parciális deriváltakból 1-1 egyenletet kapunk. Sorrendben ezek az alábbiak.
 \subsection{Másodrendű feszültségtenzor}
 A $\chi$ , $\kappa$ és immár $c$ közötti kapcsolatot kifejező egyenlet: 
 \begin{equation}
@@ -66,7 +66,7 @@ Vagyis feltesszük, hogy a rendszer azonnal beáll abba az állapotba, ahol az e
   {\partial _t}\rho  & =  - {\partial _x}\left\{ {\kappa {M_0} \cdot \left( { - {\partial _x}\frac{{\delta P}}{{\delta \kappa }}} \right) + \rho {M_0} \cdot \left( { - {\partial _x}\frac{{\delta P}}{{\delta \rho }}} \right)} \right\} \\
   {\partial _t}\kappa  & =  - {\partial _x}\left\{ {\rho M\left( { - {\partial _x}\frac{{\delta P}}{{\delta \kappa }}} \right)\quad  + \kappa {M_0} \cdot \left( { - {\partial _x}\frac{{\delta P}}{{\delta \rho }}} \right)} \right\}. \label{eq:kappa_eom}
 \end{align}
-A korábbi cikkekben és a Mesoscale könyveben az előjelekkel egyszerűsítve van, viszont abban az esetben a mobilitás hibásan szerepel. A helyes mobilitást viszont nem lehet felírni intuitív módon pozitív argumentumra. \Cref{eq:rho_eom,eq:kappa_eom}-ben a $\partial_x$ úgy hat a $\kappa /\rho $-ra, hogy csak $\kappa$-ban derivál, mert a magasabbrendű tagokat elhagyjuk. Kicsi $\kappa /\rho $, ${\partial _x}\rho /{\rho ^{3/2}}$ és $\frac{{c - {c_\infty }}}{{{c_\infty }}}$, azaz ezek szorzatait és magasabbrendű hatványait elhagyjuk.
+A korábbi cikkekben és a Mesoscale könyveben az előjelekkel egyszerűsítve van, viszont abban az esetben a mobilitás hibásan szerepel. A helyes mobilitást viszont nem lehet felírni intuitív módon pozitív argumentumra. \Cref{eq:rho_eom,eq:kappa_eom}-ben a $\partial_x$ úgy hat a $\kappa /\rho $-ra, hogy csak $\kappa$-ban derivál, mert a magasabb rendű tagokat elhagyjuk. Kicsi $\kappa /\rho $, ${\partial _x}\rho /{\rho ^{3/2}}$ és $\frac{{c - {c_\infty }}}{{{c_\infty }}}$, azaz ezek szorzatait és magasabb rendű hatványait elhagyjuk.
 
 A mobilitás egy nemtriviális függvénye az argumentumának, de mi csak ott vizsgálódunk, ahol 
 \begin{equation} \label{eq:nontriv_mobility}
@@ -196,7 +196,7 @@ Ezek megoldását keressük egy egyensúlyi állapot körül,
   \kappa \left( {t,{\mathbf{r}}} \right) &  = {\kappa _0} + \delta \kappa \left( {t,{\mathbf{r}}} \right) \\ 
   c\left( {t,{\mathbf{r}}} \right) &  = {c_0} + \delta c\left( {t,{\mathbf{r}}} \right).
 \end{aligned} \]
-Ha konstansok volnának, azok kielégítenék az egyenelteket, és a korábbi jelölések konveciója szerint 
+Ha konstansok volnának, azok kielégítenék az egyenleteket, és a korábbi jelölések konvenciója szerint 
 \[\begin{aligned}
   {\partial _x}{\partial _y}\chi  = {\sigma _{xy}} = {\tau _0} \Rightarrow {\chi _0} &  = {\tau _0} \cdot xy \\ 
   \left\langle \rho  \right\rangle  &  = {\rho _0} \\ 
@@ -409,14 +409,14 @@ Behelyettesítve \aref{eq:fd_c_elim}.\ egyenletből $\delta\chi$ egyenletébe, e
   \delta \chi  &  = i\frac{{4\pi Gb}}{{\rho _0^{3/2}}}\frac{{{k_y}}}{{{k^4}}} \cdot \delta \kappa  - \frac{{4\pi G}}{{{\rho _0}}}\beta \frac{1}{{{k^2}}} \cdot \frac{{\beta {\rho _0}}}{{{\alpha _c}}}{k^2}\delta \chi  \\ 
    &  = i\frac{{4\pi Gb}}{{\rho _0^{3/2}}}\frac{1}{{1 + 4\pi G\frac{{{\beta ^2}}}{{{\alpha _c}}}}}\frac{{{k_y}}}{{{k^4}}} \cdot \delta \kappa  \\ 
 \end{aligned} \]
-Láthatjuk, hogy ugyanaz a tag jön be, mint ami a CISM könyv 74-es egyenletében. \Aref{eq:lin_ed_kappa}.\ egyeneltben, vagyis a $\kappa$-ra vonatkozó egyenletben van csak $\chi$ függés, így csak azt kell módosítani, a $\rho$-ra vonatkozó egyenletet pedig nem módosítani. Mivel a koncentrációt kifejezhetjük $\chi$-vel, így a $\kappa$ teljes, új módosított mozgásegyenletében már nem lesz koncentráció. A módosított tag:
+Láthatjuk, hogy ugyanaz a tag jön be, mint ami a CISM könyv 74-es egyenletében. \Aref{eq:lin_ed_kappa}.\ egyenletben, vagyis a $\kappa$-ra vonatkozó egyenletben van csak $\chi$ függés, így csak azt kell módosítani, a $\rho$-ra vonatkozó egyenletet pedig nem módosítani. Mivel a koncentrációt kifejezhetjük $\chi$-vel, így a $\kappa$ teljes, új módosított mozgásegyenletében már nem lesz koncentráció. A módosított tag:
 \[\begin{aligned}
    - \frac{{i\rho _0^{3/2}k_x^2{k_y}}}{{bG}} \cdot \delta \chi  &  =  - \frac{{i\rho _0^{3/2}k_x^2{k_y}}}{{bG}} \cdot i\frac{{4\pi Gb}}{{\rho _0^{3/2}}}\frac{1}{{1 + 4\pi G\frac{{{\beta ^2}}}{{{\alpha _c}}}}}\frac{{{k_y}}}{{{k^4}}} \cdot \delta \kappa  \\ 
    &  = \frac{1}{{1 + 4\pi G\frac{{{\beta ^2}}}{{{\alpha _c}}}}}4\pi \frac{{k_x^2k_y^2}}{{{k^4}}}\delta \kappa  \\ 
    &  = \frac{1}{{1 + 4\pi G\frac{{{\beta ^2}}}{{{\alpha _c}}}}}T\left( {\mathbf{k}} \right)\delta \kappa.  \\ 
 \end{aligned} \]
 Így bevezetve a
-\[{{T_c}\left( {\mathbf{k}} \right)} = \frac{1}{{1 + 4\pi G\frac{{{\beta ^2}}}{{{\alpha _c}}}}}T\left( {\mathbf{k}} \right)\]
+\[{T_c}\left( {\mathbf{k}} \right) = \frac{1}{{1 + \tilde \beta^2}}T\left( {\mathbf{k}} \right)\quad \tilde \beta^2 = 4\pi G\frac{{{\beta ^2}}}{{{\alpha _c}}}\]
 jelölést, ugyanazt kapjuk, mint az oldott atom nélküli esetben, csak $T$ helyett $T_c$-vel.
 \begin{equation*}
 \left({\begin{array}{*{20}{c}}
@@ -432,7 +432,41 @@ Ez nem változtatja meg lényegesen \aref{eq:lambda_k}.\ egyenletet, amelynek mo
 \begin{equation} \label{eq:lambda_c_k}
 {\lambda _{c, + }}\left( {\mathbf{k}} \right) =  - \frac{{\left( {A + D} \right)k_x^2 + {T_c}\left( {\mathbf{k}} \right)}}{2} + \frac{{\sqrt {{{\left[ {\left( {A + D} \right)k_x^2 + {T_c}\left( {\mathbf{k}} \right)} \right]}^2} - 4k_x^2\left[ {B  + A\left( {Dk_x^2 + {T_c}\left( {\mathbf{k}} \right)} \right)} \right]} }}{2}.
 \end{equation}
-Beszorozva $T/T_c$-vel, láthatjuk, hogy $\lambda_{c,+}$, $A$ és $D$ elsőfokon, $B$ másodfokon átskálázódik. Tehát az új $A$, $D$ és $B$ paraméterek függvényében minden ugyanolyan alakú.
+Beszorozva $T/T_c$-vel, láthatjuk, hogy $\lambda_{c,+}$, $A$ és $D$ elsőfokon, $B$ másodfokon átskálázódik. Tehát az új $A$, $D$ és $B$ paraméterek függvényében minden ugyanolyan alakú. Alább látható egy videó és 4 jellemző értéke mellett az átmenet a ${\lambda _{c, + }}\left( {\mathbf{k}} \right)$ térben a 0 erősségű csatolástól az erős csatolásig.
+
+\begin{figure}[htb]
+\centering
+\includemedia[label=gyors_diff_reg,
+addresource=video/2.flv,
+activate=pageopen,
+passcontext,
+flashvars={source=video/2.flv&loop=true}]{\includegraphics[width=0.5\textwidth]{video/2.png}}{VPlayer.swf}
+\caption{Videó}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\begin{subfigure}[t]{0.495\linewidth}
+\centering\includegraphics[scale=0.95]{"figs/lambda_c_k_surface_btsq=0"}
+\caption{$\tilde \beta^2=0$, nincs csatolás}
+\end{subfigure}
+\begin{subfigure}[t]{0.495\linewidth}
+\centering\includegraphics[scale=0.95]{"figs/lambda_c_k_surface_btsq=1"}
+\caption{$\tilde \beta^2=1$, gyenge csatolás}
+\end{subfigure}
+\begin{subfigure}[t]{0.495\linewidth}
+\centering\includegraphics[scale=0.95]{"figs/lambda_c_k_surface_btsq=10"}
+\caption{$\tilde \beta^2=10$, közepes csatolás}
+\end{subfigure}
+\begin{subfigure}[t]{0.495\linewidth}
+\centering\includegraphics[scale=0.95]{"figs/lambda_c_k_surface_btsq=100"}
+\caption{$\tilde \beta^2=100$, erős csatolás}
+\end{subfigure}
+\caption{Különböző erősséggel csatolva az oldott atomokat a rendszerhez, változik a ${\lambda _{c, + }}\left( {\mathbf{k}} \right)$ tér.}
+\end{figure}
+
+
+
 
 \section{Core regularizáció oldott atom nélkül}
 Hogy megértsük az oldott atom esetét core regularizációval, érdemes először megnézni oldott atom nélkül, de core regularizációval a diszlokációmintázat-képződést. Ehhez \aref{eq:plastic_pot}.\ egyenletben definiált plasztikus potenciál oldott atomos tagjait elhanyagolva kapjuk, hogy 
@@ -464,7 +498,7 @@ amelyből
 \tcbhighmath[borderline={1pt}{0pt}{blue,solid}]{
 \delta \chi  = i\frac{{b\sqrt {{\rho _0}} }}{{\frac{{1 - \nu }}{{2\mu }}\rho _0^2 \cdot {k^4} + 2{a^2}\rho _0^3 \cdot {k^6}}}{k_y} \cdot \delta \kappa.}
 \end{equation}
-A teljes diszlokációsűrűség időfejlődését a \aref{eq:lin_ed_rho}.\ egyenlet szerint egyáltalán nem érinti $\chi$,
+A teljes diszlokációsűrűség időfejlődését  \aref{eq:lin_ed_rho}.\ egyenlet szerint egyáltalán nem érinti $\chi$,
 \begin{equation*}
 \tcbhighmath[borderline={1pt}{0pt}{blue,solid}]{
 0 = \left( {\lambda  + Ak_x^2} \right) \cdot \delta \rho  + i\frac{{{\tau _0}}}{{bG\sqrt {{\rho _0}} }}{k_x} \cdot \delta \kappa, }
@@ -491,7 +525,7 @@ jelöléseket, és így ugyanolyan mátrixegyenletet kell megoldani, mint a CISM
 egyenletet kell megoldani.
 
 Az alábbi ábrán látható az átmenet az gyenge core regularizációtól az erősig, illetve egy videó is az átmenetről.
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
 \includemedia[label=core_reg,
 addresource=video/1.flv,
@@ -501,7 +535,7 @@ flashvars={source=video/1.flv&loop=true}]{\includegraphics[width=0.5\textwidth]{
 \caption{Videó}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
 \begin{subfigure}[t]{0.495\linewidth}
 \centering\includegraphics[scale=0.95]{"figs/lambda_k_surface_atsq=0"}
@@ -519,7 +553,7 @@ flashvars={source=video/1.flv&loop=true}]{\includegraphics[width=0.5\textwidth]{
 \centering\includegraphics[scale=0.95]{"figs/lambda_k_surface_atsq=100"}
 \caption{Erős core regularizációval}
 \end{subfigure}
-\caption{Különböző core regularizációval $\lambda_+$}
+\caption{Különböző erősségű core regularizációval $\lambda_+$, oldott atomok nélkül}
 \end{figure}
 \end{document}
 
