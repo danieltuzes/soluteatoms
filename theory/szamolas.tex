@@ -334,7 +334,11 @@ Ez akkor lehetséges, ha a mátrix determinánsa $0$. Adott paraméterek mellett
 \subsubsection{Visszatekintés az oldott atom nélküli esetre}
 A CISM-es könyv 131.\ oldalán találjuk az oldott atomok nélküli esetet, ahol csak $\kappa$ és $\rho$ mennyiségek időfejlődését vizsgálják (a $\chi$ fejlődése adott, itt \aref{eq:lin_ed_chi}.\ egyenlet miatt, oldott atom nélkül pedig a $\delta c$ tag nélkül). A megoldandó feladat ott az, hogy \aref{eq:matrix_det_to0}.\ mátrix jobb felső $2 \times 2$-es részének legyen 0 a determinánsa, azaz
 \[\left( {\lambda  + Ak_x^2} \right)\left( {\lambda  + Dk_x^2 + T} \right) + k_x^2B = 0,\]
-ahol $B$ a deformáció sebességének egy függvénye, $B = \left( {{{\tilde \tau }_r} + {{\tilde \tau }_f}} \right)\left( {{{\tilde \tau }_r} - {{\tilde \tau }_f}/2} \right)$. Ebből kifejezve a lehetséges két gyököt:
+ahol $B$ a deformáció sebességének egy függvénye,
+\begin{equation} \label{eq:B_def}
+B = \left( {{{\tilde \tau }_r} + {{\tilde \tau }_f}} \right)\left( {{{\tilde \tau }_r} - {{\tilde \tau }_f}/2} \right).
+\end{equation}
+Ebből kifejezve a lehetséges két gyököt:
 
 \begin{equation} \label{eq:lambda_k}
 {\lambda _ \pm }\left( {\mathbf{k}} \right) =  - \underbrace {\frac{{\left( {A + D} \right)k_x^2 + T\left( {\mathbf{k}} \right)}}{2}}_E \pm \frac{{\sqrt {{{\left[ {\left( {A + D} \right)k_x^2 + T\left( {\mathbf{k}} \right)} \right]}^2} - 4k_x^2\left[ {B  + A\left( {Dk_x^2 + T\left( {\mathbf{k}} \right)} \right)} \right]} }}{2}.
@@ -344,6 +348,40 @@ A nagyobbik gyököt akkor kapjuk, ha a $+$ előjeles megoldást választjuk. A 
 Ebből látható, hogy
 \[{\lambda _ + } > 0 \Leftrightarrow B  + A\left( {Dk_x^2 + T} \right) < 0.\]
 $T$ pozitív, és ha $A$ és $D$ is, akkor $B$ kell, hogy negatív legyen. $B=-1$, $A=D=1$ esetén ábrázolva \aref{eq:lambda_k}.\ egyenlet ${\lambda _ + }\left( {\mathbf{k}} \right)$ függvényét, láthatjuk, hogy mely $\mathbf{k}$ értékek mellett lesz pozitív $\lambda$ megoldás.
+
+
+Az alábbi ábrán és videón látható az átmenet a lassú (de nem 0) deformációs sebességtől a gyorsig, $B$ függvényében (lásd.\ \ref{eq:B_def}).
+\begin{figure}[htb]
+\centering
+\includemedia[label=def_speed,
+addresource=video/def_speed.flv,
+activate=pageopen,
+passcontext,
+flashvars={source=video/def_speed.flv&loop=true}]{\includegraphics[width=0.5\textwidth]{video/def_speed.png}}{VPlayer.swf}
+\caption{Videó különböző deformációs sebességekről}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\begin{subfigure}[t]{0.495\linewidth}
+\centering\includegraphics[scale=0.95]{"figs/lambda_k_surface_B=0"}
+\caption{Kritikusan lassú deformációs sebesség}
+\end{subfigure}
+\begin{subfigure}[t]{0.495\linewidth}
+\centering\includegraphics[scale=0.95]{"figs/lambda_k_surface_B=-1"}
+\caption{Standard deformációs sebesség}
+\end{subfigure}
+\begin{subfigure}[t]{0.495\linewidth}
+\centering\includegraphics[scale=0.95]{"figs/lambda_k_surface_B=-3_16"}
+\caption{Kritikusan gyors deformációs sebesség}
+\end{subfigure}
+\begin{subfigure}[t]{0.495\linewidth}
+\centering\includegraphics[scale=0.95]{"figs/lambda_k_surface_B=-4"}
+\caption{Még gyorsabb deformációs sebesség}
+\end{subfigure}
+\caption{Különböző deformációs sebeség mellett a $\lambda_+$ hullámszám függése}
+\end{figure}
+\FloatBarrier
 
 \subsection{Oldott atomos általános esete}
 \Aref{eq:matrix_det_to0} egyenlet mátrixa $\lambda$ nélkül legyen $M$. Ekkor a keresett determináns:
@@ -437,11 +475,11 @@ Beszorozva $T/T_c$-vel, láthatjuk, hogy $\lambda_{c,+}$, $A$ és $D$ elsőfokon
 \begin{figure}[htb]
 \centering
 \includemedia[label=gyors_diff_reg,
-addresource=video/2.flv,
+addresource=video/fast_diff.flv,
 activate=pageopen,
 passcontext,
-flashvars={source=video/2.flv&loop=true}]{\includegraphics[width=0.5\textwidth]{video/2.png}}{VPlayer.swf}
-\caption{Videó}
+flashvars={source=video/fast_diff.flv&loop=true}]{\includegraphics[width=0.5\textwidth]{video/fast_diff.png}}{VPlayer.swf}
+\caption{Videó, erősödő oldott atom kh.\ csatolással}
 \end{figure}
 
 \begin{figure}[htb]
@@ -464,7 +502,7 @@ flashvars={source=video/2.flv&loop=true}]{\includegraphics[width=0.5\textwidth]{
 \end{subfigure}
 \caption{Különböző erősséggel csatolva az oldott atomokat a rendszerhez, változik a ${\lambda _{c, + }}\left( {\mathbf{k}} \right)$ tér.}
 \end{figure}
-
+\FloatBarrier
 
 
 
@@ -524,37 +562,6 @@ jelöléseket, és így ugyanolyan mátrixegyenletet kell megoldani, mint a CISM
 \[\mathop {\lim }\limits_{\tilde a \to \infty } {\lambda _{dc, + }} =  - \frac{{\left( {A + D} \right)k_x^2}}{2} + \frac{{\sqrt {{{\left[ {\left( {A + D} \right)k_x^2} \right]}^2} - 4k_x^2\left[ {B + A\left( {Dk_x^2} \right)} \right]} }}{2}\]
 egyenletet kell megoldani.
 
-Az alábbi ábrán látható az átmenet az gyenge core regularizációtól az erősig, illetve egy videó is az átmenetről.
-\begin{figure}[htb]
-\centering
-\includemedia[label=core_reg,
-addresource=video/1.flv,
-activate=pageopen,
-passcontext,
-flashvars={source=video/1.flv&loop=true}]{\includegraphics[width=0.5\textwidth]{video/1.png}}{VPlayer.swf}
-\caption{Videó}
-\end{figure}
-
-\begin{figure}[htb]
-\centering
-\begin{subfigure}[t]{0.495\linewidth}
-\centering\includegraphics[scale=0.95]{"figs/lambda_k_surface_atsq=0"}
-\caption{Core regularizáció nélkül}
-\end{subfigure}
-\begin{subfigure}[t]{0.495\linewidth}
-\centering\includegraphics[scale=0.95]{"figs/lambda_k_surface_atsq=1"}
-\caption{Gyenge core regularizációval}
-\end{subfigure}
-\begin{subfigure}[t]{0.495\linewidth}
-\centering\includegraphics[scale=0.95]{"figs/lambda_k_surface_atsq=10"}
-\caption{Közepes core regularizációval}
-\end{subfigure}
-\begin{subfigure}[t]{0.495\linewidth}
-\centering\includegraphics[scale=0.95]{"figs/lambda_k_surface_atsq=100"}
-\caption{Erős core regularizációval}
-\end{subfigure}
-\caption{Különböző erősségű core regularizációval $\lambda_+$, oldott atomok nélkül}
-\end{figure}
 \end{document}
 
 

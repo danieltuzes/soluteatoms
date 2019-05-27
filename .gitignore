@@ -5,6 +5,11 @@
 *.pdf
 *.toc
 
+*.bbl
+*.aux
+*.log
+*.blg
+
 *.png
 *.tmp
 
