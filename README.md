@@ -10,4 +10,4 @@ This is the readme file for my project hosted at [danieltuzes/soluteatoms](https
 
 The purpose of this project is to model dislocation patterns in the presence of solute atoms. The theory itself is also developed here which is based on the continuum theory of dislocations in the local density approximation.
 
-This project is abandonned, as now remarkable results were found.
+This project is abandonned, as no remarkable results were found.
