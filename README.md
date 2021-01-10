@@ -13,3 +13,5 @@ The purpose of this project is to model dislocation patterns in the presence of 
 This project is abandonned, as no remarkable results were found. I also found other projects more interesting, and I also left the academy. Since then, I learn python and right now, I am learning git. This will be useful later.
 
 It is always good to learn new things.
+
+I like physics and other simple things.
